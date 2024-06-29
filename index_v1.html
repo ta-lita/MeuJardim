@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Quintal</title>
+    <link rel="stylesheet" href="style_v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Meu Quintal</h1>
+    </header>
+    <main>
+        <div class="catalog" id="jardimCatalog">
+            <div class="item">
+                <button id="addJardimButton">Adicionar Novo Jardim</button>
+                <div id="jardimFormContainer" class="hidden">
+                    <h2>Adicionar Jardim</h2>
+                    <form id="jardimForm">
+                        <input id="nomeNovoJardim" type="text" placeholder="Nome do Jardim" required/>
+                        <button type="submit">Cadastrar Jardim</button>
+                        <button type="button" id="cancelJardimButton">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="catalog">
+            <div class="item">
+                <button id="addItemButton">Adicionar Nova Planta</button>
+                <div id="formContainer" class="hidden">
+                    <h2>Adicionar Planta</h2>
+                    <form id="plantaForm">
+                        <input id="nomeNovoPlanta" type="text" placeholder="Nome da Planta"/>
+                        <label for="jardimSelect">Selecionar Jardim:</label>
+                        <select id="jardimSelect" name="jardimSelect" required>
+                            <!-- Options will be dynamically added via JavaScript -->
+                        </select>
+                        <label for="tipoSolo">Tipo de Solo:</label>
+                        <select id="tipoSolo" name="tipoSolo" required>
+                            <option value="">Selecione o Tipo de Solo</option>
+                            <option value="arenoso">Arenoso</option>
+                            <option value="argiloso">Argiloso</option>
+                            <option value="humoso">Humoso</option>
+                        </select>
+                
+                        <label for="idealClima">Clima Ideal:</label>
+                        <input type="text" id="idealClima" name="idealClima" readonly required>
+                        
+                        <label for="plantaCarac">Características da Planta:</label>
+                        <select id="plantaCarac" name="plantaCarac" multiple required>
+                            <option value="flor">Flor</option>
+                            <option value="folha">Folha</option>
+                            <option value="fruto">Fruto</option>
+                            <option value="raiz">Raiz</option>
+                        </select>
+                        
+                        <label for="plantaValue">Valor da Planta (R$):</label>
+                        <input type="number" id="plantaValue" name="plantaValue" step="0.01" min="0" required>
+
+                        <button type="submit">Cadastrar Planta</button>
+                        <button type="button" id="cancelButton">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Quintal</p>
+    </footer>
+    <script src="script_v1.js"></script>
+</body>
+</html>
